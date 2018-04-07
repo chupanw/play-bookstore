@@ -1,0 +1,15 @@
+@(searchForm: Form[Search])(implicit request: MessagesRequestHeader)
+
+@import helper.form
+
+@main("Search") {
+    <h2>Search by keyword</h2>
+
+    @helper.form(action = routes.HomeController.results()) {
+        @helper.CSRF.formField
+        @helper.inputText(searchForm("keyword"))
+        <p>
+            <input type="submit" class="btn primary" value="start searching">
+        </p>
+    }
+}

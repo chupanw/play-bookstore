@@ -1,0 +1,13 @@
+@(books: List[Book])
+
+@main("Project Gutenberg Bookstore") {
+    <dl class="products">
+        @for(b <- books) {
+            <dt><a href="@routes.HomeController.show(b.title)">@b.title</a></dt>
+            <dd>@b.description</dd>
+        }
+        @if(books.isEmpty) {
+            <h2>No book found</h2>
+        }
+    </dl>
+}
