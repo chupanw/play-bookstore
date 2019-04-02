@@ -9,7 +9,7 @@ case class Search(keyword: String)
 
 object Book {
 
-  val books: List[Book] = findAll
+  def books: List[Book] = findAll
 
   def notFound(title: String) = Book("Book Not Found", "", s"Please verify title: $title")
 
